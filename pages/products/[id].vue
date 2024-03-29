@@ -107,7 +107,11 @@ useHead({
       name: 'description',
       content: 'Agesta ecommerce app adalah tempat jual beli online murah dan bergaransi'
     }
-  ]
+  ],
+  htmlAttrs: {
+    lang: 'en',
+    style: 'font-size: 13px'
+  }
 })
 useSeoMeta({
   title: 'Agesta Ecommerce App',
