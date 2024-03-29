@@ -134,7 +134,7 @@ useSeoMeta({
 })
 const search = ref({
   value: '',
-  placeholder: 'Search your needed'
+  placeholder: 'Iphone 15 pro 256'
 });
 const { data: categories } = await useFetch('https://dummyjson.com/products/categories', {
   transform(categories) {
