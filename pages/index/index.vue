@@ -142,7 +142,7 @@ const { data: categories } = await useFetch('https://dummyjson.com/products/cate
     return slicedCategories.map((item) => {
       const textToLowercase = item.toLowerCase()
       return {
-        img: `/images/icon-${textToLowercase}-1.png`,
+        img: `/images/icon-${textToLowercase}-2.png`,
         imgName: textToLowercase,
         name: item.split('-').join(' ')
       }
