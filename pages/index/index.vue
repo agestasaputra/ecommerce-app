@@ -9,10 +9,10 @@
         Youthway App
       </h1>
       <div class="flex flex-row">
-        <button class="text-white hover:text-blue-950 mr-2">
+        <button type="button" role="button" class="text-white hover:text-blue-950 mr-2">
           <BellIcon class="h-6 w-6" />
         </button>
-        <button class="text-white hover:text-blue-950">
+        <button type="button" role="button" class="text-white hover:text-blue-950">
           <ShoppingCartIcon class="h-6 w-6" />
         </button>
       </div>
@@ -22,7 +22,7 @@
     <main class="pb-3">
       <!-- Search section -->
       <section class="flex flex-row pt-6 pb-3 px-5">
-        <button>
+        <button type="button" role="button">
           <CameraIcon class="h-6 w-6 text-gray-400 hover:text-blue-500" />
         </button>
         <input
@@ -30,7 +30,7 @@
           v-model="search.value"
           :placeholder="search.placeholder"
         />
-        <button>
+        <button type="button" role="button">
           <FunnelIcon class="h-6 w-6 text-gray-400 hover:text-blue-500" />
         </button>
       </section>

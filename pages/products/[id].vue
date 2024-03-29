@@ -9,10 +9,10 @@
         Product
       </h1>
       <div class="flex flex-row">
-        <button class="text-white hover:text-blue-950 mr-2">
+        <button type="button" role="button" class="text-white hover:text-blue-950 mr-2">
           <BellIcon class="h-6 w-6" />
         </button>
-        <button class="text-white hover:text-blue-950">
+        <button type="button" role="button" class="text-white hover:text-blue-950">
           <ShoppingCartIcon  class="h-6 w-6" />
         </button>
       </div>
@@ -63,7 +63,7 @@
         <h1 class="font-semibold text-[14px] text-gray-500 mb-1">
           Color
         </h1>
-        <button v-for="(color, key) in product.colors" class="px-4 py-1 mr-2 rounded-md border inline-block text-gray-500 hover:bg-blue-50 hover:border-blue-400 hover:text-blue-500">
+        <button type="button" role="button" v-for="(color, key) in product.colors" class="px-4 py-1 mr-2 rounded-md border inline-block text-gray-500 hover:bg-blue-50 hover:border-blue-400 hover:text-blue-500">
           <text class="text-[14px]">{{ color }}</text>
         </button>
       </section>
@@ -85,10 +85,10 @@
     <!-- Button floating -->
     <section class="fixed w-[100vw] bottom-0 left-0 flex justify-center ">
       <div class="w-[480px] p-2 flex flex-row h-[60px] gap-1 bg-white">
-        <button class="flex-1 items-center bg-blue-950 text-gray-200 rounded-lg hover:bg-blue-900">
+        <button type="button" role="button" class="flex-1 items-center bg-blue-950 text-gray-200 rounded-lg hover:bg-blue-900">
           <text class="font-semibold text-[15px]"> Buy </text>
         </button>
-        <button class="px-3 items-center bg-white text-blue-950 border border-blue-950 rounded-lg hover:bg-blue-200">
+        <button type="button" role="button" class="px-3 items-center bg-white text-blue-950 border border-blue-950 rounded-lg hover:bg-blue-200">
           <ShoppingCartIcon class="h-6 w-6" />
         </button>
       </div>

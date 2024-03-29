@@ -11,7 +11,7 @@
             class="w-full flex-1 px-2 border border-gray-400 rounded-lg hover:border-gray-500"
             type="email"
           />
-          <button class="flex items-center bg-blue-800 rounded-lg ml-1 py-1 px-2 hover:bg-blue-900">
+          <button type="button" role="button" class="flex items-center bg-blue-800 rounded-lg ml-1 py-1 px-2 hover:bg-blue-900">
             <text class="text-gray-200 text-[13px]">
               Subscribe
             </text>
