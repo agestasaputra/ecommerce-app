@@ -22,20 +22,24 @@
     <main class="px-5 pb-5">
       <!-- Gallery section -->
       <section v-if="product" class="flex flex-row gap-2 h-[280px] my-4">
-        <div 
+        <button
+          type="button"
+          role="button"
           style="box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 4px"
           :class="`flex-1 bg-gray-200 bg-cover rounded-xl h-full overflow-auto cursor-pointer hover:border hover:border-blue-400`"
         >
           <img :src="product.thumbnail" :alt="product.title" class="w-full h-full" />
-        </div>
+        </button>
         <div class="w-[20%] flex flex-col gap-2">
-          <div
+          <button
             v-for="(image, key) in product.images"
+            type="button"
+            role="button"
             :key="key"
             style="box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 4px"
             :class="`flex-1 bg-gray-200 bg-cover rounded-xl flex items-center overflow-auto cursor-pointer hover:border hover:border-blue-400`">
             <img :key="key" :src="image" :alt="product.title" class="w-full h-full" />
-          </div>
+          </button>
         </div>
       </section>
 
