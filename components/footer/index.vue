@@ -74,18 +74,37 @@
       </h1>
       <div class="flex flex-row items-center">
         <NuxtLink :to="'/'">
-          <img src="/images/icon-linkedin.png" class="w-[30px] h-[30px] mr-2" />
+          <img src="/images/icon-linkedin.png" alt="linkedin" class="w-[30px] h-[30px] mr-2" />
         </NuxtLink>
         <NuxtLink :to="'/'">
-          <img src="/images/icon-x.png" class="w-[30px] h-[30px] mr-2" />
+          <img src="/images/icon-x.png" alt="x" class="w-[30px] h-[30px] mr-2" />
         </NuxtLink>
         <NuxtLink :to="'/'">
-          <img src="/images/icon-facebook.png" class="w-[30px] h-[30px] mr-2" />
+          <img src="/images/icon-facebook.png" alt="facebook" class="w-[30px] h-[30px] mr-2" />
         </NuxtLink>
         <NuxtLink :to="'/'">
-          <img src="/images/icon-instagram.png" class="w-[30px] h-[30px]" />
+          <img src="/images/icon-instagram.png" alt="instagram" class="w-[30px] h-[30px]" />
         </NuxtLink>
       </div>
     </section>
   </footer>
 </template>
+
+<script setup>
+useHead({
+  title: 'Agesta Ecommerce App',
+  meta: [
+    { 
+      name: 'description',
+      content: 'Agesta ecommerce app adalah tempat jual beli online murah dan bergaransi'
+    }
+  ]
+})
+useSeoMeta({
+  title: 'Agesta Ecommerce App',
+  ogTitle:  'Agesta Ecommerce App',
+  description: 'Agesta ecommerce app adalah tempat jual beli online murah dan bergaransi',
+  ogDescription: 'Agesta ecommerce app adalah tempat jual beli online murah dan bergaransi',
+  ogImage: 'https://agesta-ecommerce.netlify.app/images/youthway-logo.png'
+})
+</script>

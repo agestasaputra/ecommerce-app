@@ -26,7 +26,7 @@
           style="box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 4px"
           :class="`flex-1 bg-gray-200 bg-cover rounded-xl h-full overflow-auto cursor-pointer hover:border hover:border-blue-400`"
         >
-          <img :src="product.thumbnail" class="w-full h-full" />
+          <img :src="product.thumbnail" :alt="product.title" class="w-full h-full" />
         </div>
         <div class="w-[20%] flex flex-col gap-2">
           <div
@@ -34,7 +34,7 @@
             :key="key"
             style="box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 4px"
             :class="`flex-1 bg-gray-200 bg-cover rounded-xl flex items-center overflow-auto cursor-pointer hover:border hover:border-blue-400`">
-            <img :key="key" :src="image" class="w-full h-full" />
+            <img :key="key" :src="image" :alt="product.title" class="w-full h-full" />
           </div>
         </div>
       </section>
@@ -97,23 +97,40 @@
 </template>
 
 <script setup>
-  import Footer from '~/components/footer/index.vue'
-  import { ArrowLeftIcon, ShoppingCartIcon, BellIcon } from '@heroicons/vue/24/outline'
-  const { data: product } = await useFetch(`https://dummyjson.com/products/${useRoute().params.id}`, {
-    transform(product) {
-      return {
-        ...product,
-        discountPercentage: Math.floor(product.discountPercentage),
-        priceAfterDiscount: Math.floor(product.price - ((product.discountPercentage/100) * product.price)),
-        colors: ['Black', 'Gray', 'Silver', 'White'],
-        images: 
-          product.images.length < 3 
-            ? [
-            'https://d33v4339jhl8k0.cloudfront.net/docs/assets/5c814e0d2c7d3a0cb9325d1f/images/5c8bc20d2c7d3a154460eb97/file-1CjQ85QAme.jpg',
-            'https://image.shutterstock.com/image-vector/sample-stamp-round-grunge-sign-260nw-1449476966.jpg',
-            'https://www.shutterstock.com/image-vector/sample-rubber-stamp-vector-illustration-260nw-443389582.jpg'
-          ] : product.images.slice(0, 3)
-      }
+import Footer from '~/components/footer/index.vue'
+import { ArrowLeftIcon, ShoppingCartIcon, BellIcon } from '@heroicons/vue/24/outline'
+
+useHead({
+  title: 'Agesta Ecommerce App',
+  meta: [
+    { 
+      name: 'description',
+      content: 'Agesta ecommerce app adalah tempat jual beli online murah dan bergaransi'
     }
-  })
+  ]
+})
+useSeoMeta({
+  title: 'Agesta Ecommerce App',
+  ogTitle:  'Agesta Ecommerce App',
+  description: 'Agesta ecommerce app adalah tempat jual beli online murah dan bergaransi',
+  ogDescription: 'Agesta ecommerce app adalah tempat jual beli online murah dan bergaransi',
+  ogImage: 'https://agesta-ecommerce.netlify.app/images/youthway-logo.png'
+})
+const { data: product } = await useFetch(`https://dummyjson.com/products/${useRoute().params.id}`, {
+  transform(product) {
+    return {
+      ...product,
+      discountPercentage: Math.floor(product.discountPercentage),
+      priceAfterDiscount: Math.floor(product.price - ((product.discountPercentage/100) * product.price)),
+      colors: ['Black', 'Gray', 'Silver', 'White'],
+      images: 
+        product.images.length < 3 
+          ? [
+          'https://d33v4339jhl8k0.cloudfront.net/docs/assets/5c814e0d2c7d3a0cb9325d1f/images/5c8bc20d2c7d3a154460eb97/file-1CjQ85QAme.jpg',
+          'https://image.shutterstock.com/image-vector/sample-stamp-round-grunge-sign-260nw-1449476966.jpg',
+          'https://www.shutterstock.com/image-vector/sample-rubber-stamp-vector-illustration-260nw-443389582.jpg'
+        ] : product.images.slice(0, 3)
+    }
+  }
+})
 </script>

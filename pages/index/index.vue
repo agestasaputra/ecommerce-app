@@ -3,7 +3,7 @@
     <!-- Nav -->
     <nav class="flex flex-row justify-between items-center py-3 px-4 bg-blue-500">
       <NuxtLink :to="'/'">
-        <img src="/images/youthway-logo.png" class="w-10" />
+        <img src="/images/youthway-logo.png" alt="youthway" class="w-10" />
       </NuxtLink>
       <h1 class="font-semibold text-[16px] text-white mb-1">
         Youthway App
@@ -48,8 +48,7 @@
         <div class="pt-3 flex w-full overflow-auto max-h-[250px]" style="scrollbar-width: none;">
           <NuxtLink to="/" v-for="(category, key) in categories" :key="key" class="text-gray-900 hover:text-blue-500">
             <div class="p-2 bg-blue-100 rounded-lg w-[40px] mx-auto">
-              <!-- <img :src="category.img" class="w-full h-full"/> -->
-              <img :src="category.img" class="w-full h-full"/>
+              <img :src="category.img" :alt="category.imgName" class="w-full h-full"/>
             </div>
             <p class="text-center capitalize w-[70px] text-[11px] mt-2 leading-[12px]">
               {{ category.name }}
@@ -74,7 +73,7 @@
               style="box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 4px"
             >
               <div class="h-[130px]">
-                <img :src="popular.thumbnail" class="w-full h-full"/>
+                <img :src="popular.thumbnail" :alt="popular.title" class="w-full h-full"/>
               </div>
               <div class="flex-1 border-t p-1">
                 <h1 class="text-[12px] text-gray-900 line-clamp-2">
@@ -92,7 +91,7 @@
                   </p>
                 </div>
                 <div class="leading-[18px]">
-                  <img src="https://assets.tokopedia.net/assets-tokopedia-lite/v2/phoenix/kratos/de64305b.svg" alt="rating-icon" class="inline-block" />
+                  <img src="https://assets.tokopedia.net/assets-tokopedia-lite/v2/phoenix/kratos/de64305b.svg" alt="rating star" class="inline-block" />
                   <p class="text-[11px] text-gray-400 inline-block">
                     {{ `${popular.rating || 0}` }}
                   </p>
@@ -112,6 +111,23 @@
 <script setup>
 import Footer from '~/components/footer/index.vue'
 import { CameraIcon, BellIcon, FunnelIcon, ShoppingCartIcon } from '@heroicons/vue/24/outline'
+
+useHead({
+  title: 'Agesta Ecommerce App',
+  meta: [
+    { 
+      name: 'description',
+      content: 'Agesta ecommerce app adalah tempat jual beli online murah dan bergaransi'
+    }
+  ]
+})
+useSeoMeta({
+  title: 'Agesta Ecommerce App',
+  ogTitle:  'Agesta Ecommerce App',
+  description: 'Agesta ecommerce app adalah tempat jual beli online murah dan bergaransi',
+  ogDescription: 'Agesta ecommerce app adalah tempat jual beli online murah dan bergaransi',
+  ogImage: 'https://agesta-ecommerce.netlify.app/images/youthway-logo.png'
+})
 const search = ref({
   value: '',
   placeholder: 'Search your needed'
@@ -123,7 +139,7 @@ const { data: categories } = await useFetch('https://dummyjson.com/products/cate
       const textToLowercase = item.toLowerCase()
       return {
         img: `/images/icon-${textToLowercase}-1.png`,
-        // imageName: textToLowercase,
+        imgName: textToLowercase,
         name: item.split('-').join(' ')
       }
     });
