@@ -48,7 +48,7 @@
         <div class="pt-3 flex w-full overflow-auto max-h-[250px]" style="scrollbar-width: none;">
           <NuxtLink to="/" v-for="(category, key) in categories" :key="key" class="text-gray-900 hover:text-blue-500">
             <div class="p-2 bg-blue-100 rounded-lg w-[40px] mx-auto">
-              <img :src="category.img" :alt="category.imgName" class="w-full h-full"/>
+              <img :src="category.img" :alt="`category ${category.imgName}`" class="w-full h-full"/>
             </div>
             <p class="text-center capitalize w-[70px] text-[11px] mt-2 leading-[12px]">
               {{ category.name }}
