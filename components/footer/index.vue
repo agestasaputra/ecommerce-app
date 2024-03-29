@@ -3,23 +3,25 @@
     <!-- Subscription section -->
     <section class="bg-white pb-7">
       <div class="mx-5 flex flex-col justify-around bg-blue-500 rounded-lg p-4 mt-2 h-[150px]">
-        <h1 class="w-[47%] text-[24px] leading-[28px] text-white">
-          <label for="email">
-            Subscribe to our newsletter?
-          </label>
-        </h1>
-        <div class="flex flex-row mt-2 h-[35px]">
-          <input
-            class="w-full flex-1 px-2 border border-gray-400 rounded-lg hover:border-gray-500"
-            type="email"
-            id="email"
-          />
-          <button type="button" role="button" class="flex items-center bg-blue-800 rounded-lg ml-1 py-1 px-2 hover:bg-blue-900">
-            <text class="text-gray-200 text-[13px]">
-              Subscribe
-            </text>
-          </button>
-        </div>
+        <form>
+          <h1 class="w-[47%] text-[24px] leading-[28px] text-white">
+            <label for="email">
+              Subscribe to our newsletter?
+            </label>
+          </h1>
+          <div class="flex flex-row mt-2 h-[35px]">
+            <input
+              class="w-full flex-1 px-2 border border-gray-400 rounded-lg hover:border-gray-500"
+              type="email"
+              id="email"
+            />
+            <button type="submit" role="button" class="flex items-center bg-blue-800 rounded-lg ml-1 py-1 px-2 hover:bg-blue-900">
+              <text class="text-gray-200 text-[13px]">
+                Subscribe
+              </text>
+            </button>
+          </div>
+        </form>
       </div>
     </section>
     <!-- Menu section -->
