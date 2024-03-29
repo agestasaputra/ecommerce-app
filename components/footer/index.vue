@@ -74,16 +74,16 @@
       </h1>
       <div class="flex flex-row items-center">
         <NuxtLink :to="'/'">
-          <img src="@/assets/images/icon-linkedin.png" class="w-[30px] h-[30px] mr-2" />
+          <img src="/images/icon-linkedin.png" class="w-[30px] h-[30px] mr-2" />
         </NuxtLink>
         <NuxtLink :to="'/'">
-          <img src="@/assets/images/icon-x.png" class="w-[30px] h-[30px] mr-2" />
+          <img src="/images/icon-x.png" class="w-[30px] h-[30px] mr-2" />
         </NuxtLink>
         <NuxtLink :to="'/'">
-          <img src="@/assets/images/icon-facebook.png" class="w-[30px] h-[30px] mr-2" />
+          <img src="/images/icon-facebook.png" class="w-[30px] h-[30px] mr-2" />
         </NuxtLink>
         <NuxtLink :to="'/'">
-          <img src="@/assets/images/icon-instagram.png" class="w-[30px] h-[30px]" />
+          <img src="/images/icon-instagram.png" class="w-[30px] h-[30px]" />
         </NuxtLink>
       </div>
     </section>

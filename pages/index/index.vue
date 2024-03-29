@@ -3,7 +3,7 @@
     <!-- Nav -->
     <nav class="flex flex-row justify-between items-center py-3 px-4 bg-blue-500">
       <NuxtLink :to="'/'">
-        <img src="@/assets/images/youthway-logo.png" class="w-10" />
+        <img src="/images/youthway-logo.png" class="w-10" />
       </NuxtLink>
       <h1 class="font-semibold text-[16px] text-white mb-1">
         Youthway App
@@ -37,7 +37,7 @@
 
       <!-- Banner section -->
       <section class="py-3 px-5">
-        <div class="bg-[url('~/assets/images/landing-banner-black.jpeg')] bg-cover rounded-xl h-[200px]"></div>
+        <div class="bg-[url('/images/landing-banner-black.jpeg')] bg-cover rounded-xl h-[200px]"></div>
       </section>
 
       <!-- Category section -->
@@ -46,16 +46,15 @@
           Category
         </h1>
         <div class="pt-3 flex w-full overflow-auto max-h-[250px]" style="scrollbar-width: none;">
-          <!-- <div v-for="(category, key) in categories" :key="key"> -->
-            <NuxtLink to="/" v-for="(category, key) in categories" :key="key" class="text-gray-900 hover:text-blue-500">
-              <div class="p-2 bg-blue-100 rounded-lg w-[40px] mx-auto">
-                <img :src="category.img" class="w-full h-full"/>
-              </div>
-              <p class="text-center capitalize w-[70px] text-[11px] mt-2 leading-[12px]">
-                {{ category.name }}
-              </p>
-            </NuxtLink>
-          <!-- </div> -->
+          <NuxtLink to="/" v-for="(category, key) in categories" :key="key" class="text-gray-900 hover:text-blue-500">
+            <div class="p-2 bg-blue-100 rounded-lg w-[40px] mx-auto">
+              <!-- <img :src="category.img" class="w-full h-full"/> -->
+              <img :src="category.img" class="w-full h-full"/>
+            </div>
+            <p class="text-center capitalize w-[70px] text-[11px] mt-2 leading-[12px]">
+              {{ category.name }}
+            </p>
+          </NuxtLink>
         </div>
       </section>
       
@@ -123,7 +122,8 @@ const { data: categories } = await useFetch('https://dummyjson.com/products/cate
     return slicedCategories.map((item) => {
       const textToLowercase = item.toLowerCase()
       return {
-        img: `@/assets/images/icon-${textToLowercase}-1.png`,
+        img: `/images/icon-${textToLowercase}-1.png`,
+        // imageName: textToLowercase,
         name: item.split('-').join(' ')
       }
     });
